@@ -4,113 +4,128 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>18.08.25 — 18.08.26</title>
+<title>18.08.2025 — 18.08.2026 — 18.08.♾️</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
-margin:0;
-background:#36383d;
-color:#eee;
-font-family:Arial,sans-serif;
-min-height:100vh;
+  margin:0;
+  min-height:100vh;
+  background:#36383d;
+  color:#eeeeee;
+  font-family:Arial,sans-serif;
 }
 
 .container{
-width:90%;
-max-width:650px;
-margin:auto;
-padding:55px 0;
+  width:90%;
+  max-width:650px;
+  margin:auto;
+  padding:50px 0 60px;
 }
 
 header{
-text-align:center;
-margin-bottom:35px;
+  text-align:center;
+  margin-bottom:35px;
 }
 
 .date{
-color:#aaaeb5;
-font-size:13px;
-letter-spacing:3px;
+  color:#b8bbc1;
+  font-size:12px;
+  letter-spacing:2px;
+  line-height:1.8;
 }
 
 h1{
-font-family:Georgia,serif;
-font-size:42px;
-font-weight:normal;
-margin:18px 0 12px;
+  font-family:Georgia,serif;
+  font-size:42px;
+  font-weight:normal;
+  margin:15px 0;
 }
 
 .intro{
-color:#c9cbd0;
-font-size:14px;
-line-height:1.8;
+  color:#c9cbd0;
+  font-size:14px;
+  line-height:1.8;
 }
 
 .doors{
-display:grid;
-gap:13px;
+  display:grid;
+  gap:13px;
 }
 
-button{
-width:100%;
-padding:19px;
-border-radius:18px;
-border:1px solid #55585f;
-background:#414349;
-color:#eee;
-text-align:left;
-font-size:14px;
-cursor:pointer;
+.door{
+  width:100%;
+  padding:19px;
+  border-radius:18px;
+  border:1px solid #55585f;
+  background:#414349;
+  color:#eeeeee;
+  text-align:left;
+  cursor:pointer;
+  font-size:14px;
+  transition:.2s;
 }
 
-button:active{
-transform:scale(.98);
+.door:hover{
+  background:#484a50;
+  transform:translateY(-2px);
 }
 
 .hint{
-display:block;
-margin-top:7px;
-font-size:11px;
-color:#aeb1b7;
+  display:block;
+  margin-top:7px;
+  color:#aeb1b7;
+  font-size:11px;
 }
 
 .message{
-display:none;
-margin-top:22px;
-padding:25px;
-border-radius:20px;
-background:#414349;
-border:1px solid #55585f;
-line-height:2;
-font-size:14px;
-white-space:pre-line;
+  display:none;
+  margin-top:22px;
+  padding:25px;
+  border-radius:20px;
+  background:#414349;
+  border:1px solid #55585f;
+  line-height:2;
+  font-size:14px;
+  white-space:pre-line;
 }
 
 .message.show{
-display:block;
+  display:block;
 }
 
-.title{
-font-family:Georgia,serif;
-font-size:26px;
-margin-bottom:15px;
+.message-title{
+  font-family:Georgia,serif;
+  font-size:26px;
+  margin-bottom:15px;
 }
 
 .close{
-margin-top:18px;
-background:transparent;
-border:0;
-color:#aaa;
-padding:5px;
+  margin-top:18px;
+  padding:7px 12px;
+  border:0;
+  background:transparent;
+  color:#aaaeb5;
+  cursor:pointer;
 }
 
 footer{
-text-align:center;
-margin-top:45px;
-color:#777b82;
-font-size:11px;
+  text-align:center;
+  margin-top:45px;
+  color:#777b82;
+  font-size:11px;
+}
+
+.lock{
+  text-align:center;
+}
+
+.lock-icon{
+  font-size:34px;
+  margin-bottom:10px;
 }
 </style>
 </head>
@@ -120,29 +135,15 @@ font-size:11px;
 <div class="container">
 
 <header>
-<div class="date">18.08.25 — 18.08.26</div>
+
+<div class="date">
+18.08.2025 — 18.08.2026 — 18.08.♾️
+</div>
 
 <h1>one year of us 🍁🩶</h1>
 
 <div class="intro">
-There are a few things I wanted you to have.<br>
+There are a few things I wanted you to have.
+<br>
 Open whatever feels right, whenever it feels right.
-</div>
-</header>
-
-
-<div class="doors">
-
-<button onclick="openMessage('happy')">
-🩶 Open when you're happy
-<span class="hint">لما تكون مبسوط</span>
-</button>
-
-<button onclick="openMessage('miss')">
-🍁 Open when you miss me
-<span class="hint">لما تشتاق</span>
-</button>
-
-<button onclick="openMessage('sleep')">
-🌙 Open when you can't sleep
-<span cl...
+<...
