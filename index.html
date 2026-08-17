@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -140,10 +140,327 @@ one year of us 🍁🩶
 <div class="intro">
 There are a few things I wanted you to have.
 <br>
-Open whatever
+Open whatever feels right, whenever it feels right.
+</div>
+
+</header>
+
+<div class="doors">
+
+<button class="door" onclick="openMessage('happy')">
+🩶 Open when you're happy
+<span class="hint">لما تكون مبسوط</span>
+</button>
+
+<button class="door" onclick="openMessage('miss')">
+🍁 Open when you miss me
+<span class="hint">لما تشتاق</span>
+</button>
+
+<button class="door" onclick="openMessage('sleep')">
+🌙 Open when you can't sleep
+<span class="hint">لما ما تقدر تنام</span>
+</button>
+
+<button class="door" onclick="openMessage('laugh')">
+😂 Open when you need to laugh
+<span class="hint">لما تحتاج تضحك</span>
+</button>
+
+<button class="door" onclick="openMessage('reminder')">
+🤍 Open when you need a reminder
+<span class="hint">لما تحتاج تتذكر شيء</span>
+</button>
+
+<button class="door" onclick="openMessage('talk')">
+💬 Open when you feel like talking to me
+<span class="hint">لما تحس بدك تحكي معي</span>
+</button>
+
+<button class="door" onclick="openFuture()">
+🔒 Open on 18.08.2027
+<span class="hint">this one has to wait.</span>
+</button>
+
+</div>
+
+<div id="message" class="message">
+
+<div id="messageTitle" class="message-title"></div>
+
+<div id="messageText"></div>
+
+<button class="close" onclick="closeMessage()">
+close ×
+</button>
+
+</div>
+
+<footer>
+made for one very specific person 🍁
+</footer>
+
+</div>
+
+<script>
+
+const messages = {
+
+happy: {
+title:"Open when you're happy 🩶",
+text:`إذا كنت فاتح هاظ الباب معناته إنك مبسوط.
+
+إن شاء الله دايما مبسوط يارب.
+
+وبس حبيت أذكرك إنه في شخص من بعيد ممكن يفرح لفرحتك أكثر مما تتخيل.
+
+فإذا كنت مبسوط، ضل مبسوط،
+لأني أحب أشوفك مبسوط وأنبسط لبسطتك.
+
+هيك أحلى عليك.
+(مع إنك حلو بكل الأوقات)
+
+انتبه ع حالك .🩶`
+},
+
+miss: {
+title:"Open when you miss me 🍁",
+text:`إذا فتحت هاظ الباب غالبًا في شيء خلاك تشتاق.
+
+ما عندي كلام كبير أقوله،
+بس يمكن يكفي تعرف إنه الشعور مش غريب علي.
+
+يمكن المسافة ما تقصر معنا فعلًا،
+ويمكن البعد يضايق أحيانًا،
+بس برضو مهما تغيرت المسافة
+ولا الطريق
+ولا الوقت
+ولا ولا الخ...
+
+مافي اشي عني اتجاهك رح يتغير.
+
+والوقت قدامنا طويل بإذن الله 
+انتبه ع حالك .🩶`
+},
+
+sleep: {
+title:"Open when you can't sleep 🌙",
+text:`إذا أنت صاحي لهسا فـ غالبًا عقلك قرر يفتح كل المواضيع الساعة 3 الفجر.
+
+شو ما كان سبب إنك مش نايم،
+ما تفكر فيه كثير،
+وخصوصًا لو كان مضايقك.
+
+كل اشي يمر شو ما كان حجم ثقله.
+
+توكل ع ربنا ومافي اشي مستحيل.
+
+وبس نام،
+لأنه يكفيك سهر مثقل دمك جد.
+
+يعني لو أنا كنت أحكي معك كنت حكيت:
+يلا طافي دنام 😒
+
+تلاقي خير ..
+
+وانتبه ع حالك .🩶`
+},
+
+laugh: {
+title:"Open when you need to laugh 😂",
+text:`إذا فتحت هاد الباب لأنك ودك تضحك
+فأنا آسفة ما عندي نكتة عالمية تغير مجرى حياتك 😂
+
+بس تذكر كمية المواقف الغبية اللي صارت،
+وكم مرة كنا نحكي اشي عادي وينتهي الموضوع باشي ما له دخل بالموضوع أصلًا.
+
+هول كل اشي ماله علاقه ببعضه
+إلا أنا وثامر ككهه.
+
+يلا ضحكتك 😏.
+
+انقلع يكفي مثقل دمك ودمي اه والله.
+
+وانتبه ع حالك .🩶`
+},
+
+reminder: {
+title:"Open when you need a reminder 🤍",
+text:`بس حبيت أتركلك هالكلام هون.
+
+لا تقلل من حالك،
+ولا تحس إنه لازم تكون دايمًا بأفضل حال حتى تكون كفاية.
+
+في أيام تكون فيها قوي،
+وفي أيام تكون فيها تعبان،
+وفي أيام صعبة تمر عليك..
+بس كله رح يهون.
+
+في حدا من بعيد أو من قريب
+أو بوجوده أو عدمه
+يشجعك ومعك ومتى ما احتجتها فهي موجودة.
+
+يعني حتى لو ندمت عليك شوي 😒.
+
+وتذكر إنه كلشي تسويه
+حتى لو تشوفه صغير
+أنا بشوفه إنجاز عظيم وكبير بعيني.
+
+وخلص كلخرا.
+
+وانتبه ع حالك .🩶`
+},
+
+talk: {
+title:"Open when you feel like talking to me 💬",
+text:`إذا وصلت لهون معناته يمكن في شيء نفسك تحكيه.
+
+فـ احكي.
+
+حتى لو الموضوع تافه،
+حتى لو ما تعرف من وين تبدأ،
+حتى لو بس بدك تحكي عن يومك.
+
+مش لازم يكون عندك سبب كبير.
+
+يعني شو ما كان السبب
+أو الموضوع اللي بدك تحكي فيه
+تفاهته أو حجمه
+أو شو ما يكون اللي بدك تحكيه
+أنا موجودة 24 hours.
+
+شو هاظ حاس حالي بمشغل استشارات 😂
+
+نرجع لموضوعنا:
+أنا موجودة متى ما احتجت 🤚🏽
+
+وهاظ الباب موجود عشان يذكرك بهالشيء.
+
+فـ إذا حسيت بدك تحكي
+تعرف وين تلاقيني.
+
+وانتبه ع حالك .🩶`
+}
+
+};
+
+function openMessage(type){
+
+document.getElementById("messageTitle").innerText =
+messages[type].title;
+
+document.getElementById("messageText").innerText =
+messages[type].text;
+
+document.getElementById("message").classList.add("show");
+
+document.getElementById("message").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function openFuture(){
+
+const unlockDate =
+new Date("2027-08-18T00:00:00");
+
+const today =
+new Date();
+
+let title;
+let text;
+
+if(today < unlockDate){
+
+title = "Not yet. 🔒";
+
+text = `Come back on 18.08.2027. 🍁🩶
+
+Some things are better when you wait for them.
+
+(like me 😏)`;
+
+}else{
+
+title = "18.08.2027 🍁🩶";
+
+text = `إذا قدرت تفتح هاظ الباب معناته وصلنا لـ 18.08.2027.
+
+سنة ثانية مرت.
+
+ويمكن الغريب إنه الوقت يمشي بسرعة
+بس بعض التفاصيل تظل كأنها صارت امبارح.
+
+مش عارفة وين كنا وقت ما كتبت هالكلام
+ولا كيف كانت أيامنا
+ولا شو الأشياء اللي تغيرت بين التاريخين.
+
+بس بعرف اشي واحد:
+
+إنه في أشياء ما كانت مجرد أيام وعدّت.
+
+في تفاصيل صغيرة،
+مواقف،
+ضحكات،
+كلام،
+سهر،
+أشياء كثير،
+وأوقات يمكن ما انتبهنا وقتها إنها رح تصير ذكريات مهمة.
+
+وإذا أنت تقرأ هالكلام بعد هالسنة
+ورح تكون السنة الثانية النا
+فـ أتمنى تكون بخير
+إن كنا لسا مع بعض
+أو الدنيا فرقتنا لا سمح الله.
+
+وأتمنى إنه الأيام كانت لطيفة عليك
+وإنك وصلت لأشياء كنت تتمنى توصلها.
+
+وأتمنى مهما تغيرت الأشياء
+تظل تتذكر إنه في شخص كان يتمنالك
+ورح يضل يتمنى الخير من قلبه
+حتى بالأيام اللي ما كان يعرف كيف يعبر عنها 🫀
+
+يمكن ما عندي كلام مرتب لكل شيء
+بس عندي امتنان لكل اللحظات اللي كانت بيننا.
+
+للسنة اللي راحت
+ولكل تفصيلة صغيرة خلتها مختلفة.
+
+وإذا رجعنا نقرأ هالكلام بعد سنوات
+يمكن نضحك على كمية المشاعر اللي حطيناها بموقع واحد.
+
+بس عادي.
+
+بعض الأشياء تستاهل تنكتب.
+
+18.08.2025 — 18.08.2027 — 18.08.♾️
+
+وانتبه ع حالك .🩶🫆
+
+U’r Judy🍁`;
+}
+
+document.getElementById("messageTitle").innerText = title;
+
+document.getElementById("messageText").innerText = text;
+
+document.getElementById("message").classList.add("show");
+
+document.getElementById("message").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+function closeMessage(){
+
+document.getElementById("message").classList.remove("show");
+
+}
 
 </script>
 
 </body>
 </html>
-  
