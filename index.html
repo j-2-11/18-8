@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,92 +7,142 @@
 <title>18.08.25 — 18.08.26</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Montserrat:wght@400;500;600&display=swap');
+*{box-sizing:border-box}
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body{
+margin:0;
+background:#36383d;
+color:#eee;
+font-family:Arial,sans-serif;
+min-height:100vh;
 }
 
-body {
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.08), transparent 28%),
-        radial-gradient(circle at 80% 90%, rgba(255,255,255,0.06), transparent 30%),
-        #36383d;
-    color: #eeeeee;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
+.container{
+width:90%;
+max-width:650px;
+margin:auto;
+padding:55px 0;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.08;
-    background-image: radial-gradient(#ffffff 0.7px, transparent 0.7px);
-    background-size: 18px 18px;
+header{
+text-align:center;
+margin-bottom:35px;
 }
 
-.container {
-    width: min(92%, 720px);
-    margin: auto;
-    padding: 55px 0 70px;
+.date{
+color:#aaaeb5;
+font-size:13px;
+letter-spacing:3px;
 }
 
-.intro {
-    text-align: center;
-    margin-bottom: 42px;
-    animation: fadeUp 1s ease;
+h1{
+font-family:Georgia,serif;
+font-size:42px;
+font-weight:normal;
+margin:18px 0 12px;
 }
 
-.small-date {
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: #bfc1c5;
-    margin-bottom: 15px;
+.intro{
+color:#c9cbd0;
+font-size:14px;
+line-height:1.8;
 }
 
-h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(34px, 9vw, 60px);
-    font-weight: 400;
-    line-height: 1.05;
-    color: #f2f2f2;
+.doors{
+display:grid;
+gap:13px;
 }
 
-.subtitle {
-    margin-top: 14px;
-    font-size: 14px;
-    color: #bfc1c5;
-    letter-spacing: 1px;
+button{
+width:100%;
+padding:19px;
+border-radius:18px;
+border:1px solid #55585f;
+background:#414349;
+color:#eee;
+text-align:left;
+font-size:14px;
+cursor:pointer;
 }
 
-.intro-text {
-    margin: 23px auto 0;
-    max-width: 500px;
-    font-size: 14px;
-    line-height: 1.9;
-    color: #d8d9dc;
+button:active{
+transform:scale(.98);
 }
 
-.doors {
-    display: grid;
-    gap: 14px;
+.hint{
+display:block;
+margin-top:7px;
+font-size:11px;
+color:#aeb1b7;
 }
 
-.door {
-    width: 100%;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: rgba(255,255,255,0.055);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    padding: 19px 20px;
-    color: #eeeeee;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.25s ease;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12
+.message{
+display:none;
+margin-top:22px;
+padding:25px;
+border-radius:20px;
+background:#414349;
+border:1px solid #55585f;
+line-height:2;
+font-size:14px;
+white-space:pre-line;
+}
+
+.message.show{
+display:block;
+}
+
+.title{
+font-family:Georgia,serif;
+font-size:26px;
+margin-bottom:15px;
+}
+
+.close{
+margin-top:18px;
+background:transparent;
+border:0;
+color:#aaa;
+padding:5px;
+}
+
+footer{
+text-align:center;
+margin-top:45px;
+color:#777b82;
+font-size:11px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+<div class="date">18.08.25 — 18.08.26</div>
+
+<h1>one year of us 🍁🩶</h1>
+
+<div class="intro">
+There are a few things I wanted you to have.<br>
+Open whatever feels right, whenever it feels right.
+</div>
+</header>
+
+
+<div class="doors">
+
+<button onclick="openMessage('happy')">
+🩶 Open when you're happy
+<span class="hint">لما تكون مبسوط</span>
+</button>
+
+<button onclick="openMessage('miss')">
+🍁 Open when you miss me
+<span class="hint">لما تشتاق</span>
+</button>
+
+<button onclick="openMessage('sleep')">
+🌙 Open when you can't sleep
+<span cl...
