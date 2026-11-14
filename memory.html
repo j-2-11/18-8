@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>صندوق الذكريات</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(145deg,#fff0f5,#f8dce8);font-family:Arial,sans-serif;color:#b86d8b;display:flex;align-items:center;justify-content:center;padding:22px}
+.wrap{width:min(100%,680px);text-align:center}.frame{position:relative;display:flex;align-items:center;justify-content:center;min-height:62vh}
+.photo{max-width:100%;max-height:68vh;object-fit:contain;border-radius:18px;box-shadow:0 12px 36px #a85d7b30;cursor:zoom-in}
+button{border:1px solid #e8a9c3;background:#ffffff75;color:#ad6683;border-radius:50%;width:46px;height:46px;font-size:25px;cursor:pointer;backdrop-filter:blur(8px)}
+.nav{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:18px}.count{font-size:15px;letter-spacing:2px;color:#b87894}
+.overlay{position:fixed;inset:0;background:#2b1722eF;display:none;align-items:center;justify-content:center;padding:14px;z-index:5}.overlay img{max-width:100%;max-height:95vh;object-fit:contain;border-radius:10px;cursor:zoom-out}
+</style></head>
+<body><main class="wrap"><div class="frame"><img id="photo" class="photo" src="memory-images/memory-01.jpeg" alt="صورة من الذكريات"></div>
+<div class="nav"><button id="next" aria-label="التالي">‹</button><span id="count" class="count">01 / 28</span><button id="prev" aria-label="السابق">›</button></div></main>
+<div class="overlay" id="overlay"><img id="large" alt=""></div>
+<script>
+const images = ["memory-images/memory-01.jpeg","memory-images/memory-02.jpeg","memory-images/memory-03.jpeg","memory-images/memory-04.jpeg","memory-images/memory-05.jpeg","memory-images/memory-06.jpeg","memory-images/memory-07.jpeg","memory-images/memory-08.jpeg","memory-images/memory-09.jpeg","memory-images/memory-10.jpeg","memory-images/memory-11.jpeg","memory-images/memory-12.jpeg","memory-images/memory-13.jpeg","memory-images/memory-14.jpeg","memory-images/memory-15.jpeg","memory-images/memory-16.jpeg","memory-images/memory-17.jpeg","memory-images/memory-18.jpeg","memory-images/memory-19.jpeg","memory-images/memory-20.jpeg","memory-images/memory-21.jpeg","memory-images/memory-22.jpeg","memory-images/memory-23.jpeg","memory-images/memory-24.jpeg","memory-images/memory-25.jpeg","memory-images/memory-26.jpeg","memory-images/memory-27.jpeg","memory-images/memory-28.jpeg"];
+let index=0;const photo=document.getElementById('photo'),count=document.getElementById('count');
+function show(){photo.src=images[index];count.textContent=String(index+1).padStart(2,'0')+' / '+String(images.length).padStart(2,'0')}
+function move(n){index=(index+n+images.length)%images.length;show()}
+document.getElementById('next').onclick=()=>move(1);document.getElementById('prev').onclick=()=>move(-1);
+let startX=0;photo.addEventListener('touchstart',e=>startX=e.touches[0].clientX,{passive:true});
+photo.addEventListener('touchend',e=>{let dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45)move(dx<0?1:-1)},{passive:true});
+const overlay=document.getElementById('overlay'),large=document.getElementById('large');
+photo.onclick=()=>{large.src=images[index];overlay.style.display='flex'};overlay.onclick=()=>overlay.style.display='none';
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')move(1);if(e.key==='ArrowRight')move(-1);if(e.key==='Escape')overlay.style.display='none'});
+</script></body></html>
